@@ -1,9 +1,9 @@
-FROM subhayu99/fbprophet
+FROM hamzalazigheb/nuit
 
-LABEL maintainer="Subhayu Kumar Bala ( balasubhayu99@gmail.com )"
+LABEL maintainer="hamza lazigheb ( hamzalazigheb@gmail.com ) "
 
 RUN apt-get update
-RUN git clone https://github.com/subhayu99/finadict.git
+RUN git clone https://github.com/hamzalazigheb/nuit
 
 WORKDIR /root/notebooks/finadict
 
