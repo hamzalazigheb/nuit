@@ -1,12 +1,9 @@
 pipeline {
     agent any
 
-
-
     stages {
         stage('Checkout Code') {
             steps {
-                // Use the defined Git tool
                 git url: 'https://github.com/hamzalazigheb/nuit'
             }
         }
@@ -28,6 +25,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    def imageName = "hamzalazigheb/nuit"
+                    docker.withRegistry('https://your-docker-registry', 'docker-registry-credentials-id') {
+                        docker.image(imageName).push()
+                    }
+                }
+            }
+        }
     }
 
     post {
@@ -39,3 +47,4 @@ pipeline {
         }
     }
 }
+
