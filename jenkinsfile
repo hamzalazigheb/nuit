@@ -1,4 +1,4 @@
-ppipeline {
+pipeline {
     agent any
 
     stages {
@@ -11,8 +11,17 @@ ppipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def imageName = "hamzalazigheb/horizon:latest"
-                    docker.build(imageName)
+                    def imageName = "hamzalazigheb/nuit"
+                    def dockerfile = """
+                        FROM python:3.8
+                        WORKDIR /app
+                        COPY . /app
+                        RUN pip install -r requirements.txt
+                        EXPOSE 5000
+                        CMD ["python", "app.py"]
+                    """
+                    sh "echo '''${dockerfile}''' > Dockerfile"
+                    docker.build(imageName, '-f Dockerfile .')
                 }
             }
         }
@@ -22,7 +31,7 @@ ppipeline {
         always {
             cleanWs()
             script {
-                docker.image("hamzalazigheb/horizon:latest").remove()
+                docker.image("hamzalazigheb/nuit").remove()
             }
         }
     }
