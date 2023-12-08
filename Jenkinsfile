@@ -38,13 +38,6 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            cleanWs()
-            script {
-                docker.image("hamzalazigheb/nuit").remove()
-            }
-        }
-    }
+   
 }
 
