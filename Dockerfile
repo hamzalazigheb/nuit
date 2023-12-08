@@ -1,20 +1,14 @@
-FROM hamzalazigheb/nuit
+FROM python:3.7-slim
 
-LABEL maintainer="hamza lazigheb ( hamzalazigheb@gmail.com ) "
+WORKDIR /app
 
-RUN apt-get update
-RUN git clone https://github.com/hamzalazigheb/nuit
+ADD . /app
 
-WORKDIR /root/notebooks/finadict
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-RUN pip3 install -r requirements.txt
+EXPOSE 8080
 
-ENV STREAMLIT_SERVER_PORT 80
-
-EXPOSE 80
-
-STOPSIGNAL SIGTERM
-
-ENTRYPOINT ["streamlit", "run"]
-
-CMD ["app.py"]
+# execute the Flask app
+ENTRYPOINT ["python"]
+HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
+CMD ["/app/app.py"]
