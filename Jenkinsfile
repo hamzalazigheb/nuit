@@ -1,9 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        // Define the Git tool named 'git' (you can find the tool name in Jenkins Global Tool Configuration)
+        git 'git'
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
+                // Use the defined Git tool
                 git url: 'https://github.com/hamzalazigheb/nuit'
             }
         }
@@ -36,4 +42,3 @@ pipeline {
         }
     }
 }
-
