@@ -1,12 +1,35 @@
-# Example Requirements File with Critical Issues
+# Example Requirements File with Critical, High, and Medium Priority Issues
 
-# Critical Issue 1: Missing Version Specifier
+# Critical Issues:
+# 1. Missing Version Specifier for requests library
 requests
 
-# Critical Issue 2: Conflicting Dependencies
+# 2. Conflicting Dependencies between Django and Flask
 django==2.2
 flask==1.1
 
-# Critical Issue 3: Insecure Package
+# 3. Insecure Package with known vulnerabilities
 insecure-package
-ghf
+
+# 4. Package with deprecated functionality
+deprecated-package>=1.0,<2.0
+
+# 5. Package with a license incompatible with project requirements
+proprietary-library
+
+# High Priority Issues:
+# 6. Outdated Package with security patches available
+vulnerable-package<=1.2.3
+
+# 7. Package with excessive memory usage
+memory-hogging-library>=2.0,<3.0
+
+# 8. Package with performance bottlenecks
+slow-package>=3.0,<4.0
+
+# Medium Priority Issues:
+# 9. Package with outdated documentation
+outdated-docs-package>=1.0,<2.0
+
+# 10. Package with intermittent network connectivity issues
+network-flaky-library>=2.0,<3.0
