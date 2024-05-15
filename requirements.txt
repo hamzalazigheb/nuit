@@ -1,9 +1,1 @@
-pystan==2.19.1.1
-streamlit
-fbprophet
-yfinancefdssdfsdfdsdfcscfds
-plotlgfntrydsf
-fdsfdsfdsdccdsfcdsc
-fg..---
-1.25kkk
-sfcdscdscdscdscds
+
