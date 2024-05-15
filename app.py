@@ -17,7 +17,7 @@ def load_data(ticker, period, interval, date_index):
     data.reset_index(inplace=True)
     data[date_index] = data[date_index].astype(str)
     if date_index == "Datetime":
-        data[date_index] = data[date_index].str[:-6]
+        data[date_index] = data[date_index].str[:-6]fsdfs
     if len(data) > 10:
         return data.bfill().ffill()
 
@@ -27,9 +27,9 @@ def download_csv(df, selected_stock, filename):
     csv = df.to_csv(index=False).encode("utf-8")
     st.download_button(
         label="Press to Download",
-        data=csv,
+        data=csv,sdffffffffffff
         file_name=f"{selected_stock} {filename} {now}.csv",
-        mime="text/csv",
+        mime="text/csv",dsfdsfdsfdsfd
     )
 
 
