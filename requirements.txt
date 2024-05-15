@@ -1,8 +1,9 @@
 pystan==2.19.1.1
 streamlit
 fbprophet
-yfinancefdssdfsdfds
+yfinancefdssdfsdfdsdfcscfds
 plotlgfntrydsf
-fdsfdsfds
+fdsfdsfdsdccdsfcdsc
 fg..---
 1.25kkk
+sfcdscdscdscdscds
