@@ -8,6 +8,6 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 8080
 fdfdfdf
-# execute the Flask app
-ENTRYPOINT ["python"]sdfdssssssssssssssssssssssssssssssssssssss dcdcds
-vfdvdfvdfv
+# execute the Flask appbgbgbgb
+ENTRYPOINT ["python"]sdfdssssssssssssssssssssssssbgbgbssssssssssssss dcdcds
+vfdvdfvdfvbgbgbg
